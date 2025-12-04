@@ -171,6 +171,11 @@ namespace BT7
 
         private void dgv_students_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           
+        }
+
+        private void dgv_students_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             // Kiểm tra nếu click vào dòng hợp lệ
             if (e.RowIndex >= 0 && e.RowIndex < dgv_students.Rows.Count - 1) // Trừ 1 nếu dòng cuối là dòng trống (allowUserToAddRows)
             {
