@@ -44,16 +44,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_students = new System.Windows.Forms.DataGridView();
-            this.mssv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_numNam = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_numNu = new System.Windows.Forms.TextBox();
             this.cmb_LocKhoa = new System.Windows.Forms.ComboBox();
+            this.mssv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_students)).BeginInit();
             this.SuspendLayout();
@@ -233,46 +233,6 @@
             this.dgv_students.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_students_CellClick);
             this.dgv_students.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_students_CellContentClick);
             // 
-            // mssv
-            // 
-            this.mssv.HeaderText = "MSSV";
-            this.mssv.MinimumWidth = 8;
-            this.mssv.Name = "mssv";
-            this.mssv.ReadOnly = true;
-            this.mssv.Width = 150;
-            // 
-            // hoten
-            // 
-            this.hoten.HeaderText = "Họ Tên";
-            this.hoten.MinimumWidth = 8;
-            this.hoten.Name = "hoten";
-            this.hoten.ReadOnly = true;
-            this.hoten.Width = 150;
-            // 
-            // gt
-            // 
-            this.gt.HeaderText = "Giới Tính";
-            this.gt.MinimumWidth = 8;
-            this.gt.Name = "gt";
-            this.gt.ReadOnly = true;
-            this.gt.Width = 150;
-            // 
-            // dtb
-            // 
-            this.dtb.HeaderText = "ĐTB";
-            this.dtb.MinimumWidth = 8;
-            this.dtb.Name = "dtb";
-            this.dtb.ReadOnly = true;
-            this.dtb.Width = 150;
-            // 
-            // khoa
-            // 
-            this.khoa.HeaderText = "Khoa";
-            this.khoa.MinimumWidth = 8;
-            this.khoa.Name = "khoa";
-            this.khoa.ReadOnly = true;
-            this.khoa.Width = 150;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -316,6 +276,44 @@
             this.cmb_LocKhoa.TabIndex = 9;
             this.cmb_LocKhoa.SelectedIndexChanged += new System.EventHandler(this.cmb_LocKhoa_SelectedIndexChanged);
             // 
+            // mssv
+            // 
+            this.mssv.HeaderText = "MSSV";
+            this.mssv.MinimumWidth = 8;
+            this.mssv.Name = "mssv";
+            this.mssv.ReadOnly = true;
+            // 
+            // hoten
+            // 
+            this.hoten.HeaderText = "Họ Tên";
+            this.hoten.MinimumWidth = 8;
+            this.hoten.Name = "hoten";
+            this.hoten.ReadOnly = true;
+            this.hoten.Width = 150;
+            // 
+            // gt
+            // 
+            this.gt.HeaderText = "Giới Tính";
+            this.gt.MinimumWidth = 8;
+            this.gt.Name = "gt";
+            this.gt.ReadOnly = true;
+            // 
+            // dtb
+            // 
+            this.dtb.HeaderText = "ĐTB";
+            this.dtb.MinimumWidth = 8;
+            this.dtb.Name = "dtb";
+            this.dtb.ReadOnly = true;
+            this.dtb.Width = 60;
+            // 
+            // khoa
+            // 
+            this.khoa.HeaderText = "Khoa";
+            this.khoa.MinimumWidth = 8;
+            this.khoa.Name = "khoa";
+            this.khoa.ReadOnly = true;
+            this.khoa.Width = 150;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,11 +354,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmb_khoa;
         private System.Windows.Forms.DataGridView dgv_students;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mssv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hoten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dtb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn khoa;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_numNam;
         private System.Windows.Forms.Label label8;
@@ -368,6 +361,11 @@
         private System.Windows.Forms.Button btn_De;
         private System.Windows.Forms.Button btn_Up;
         private System.Windows.Forms.ComboBox cmb_LocKhoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mssv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hoten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn khoa;
     }
 }
 
