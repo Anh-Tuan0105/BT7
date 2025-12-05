@@ -20,6 +20,11 @@ namespace BT7
         private void Form1_Load(object sender, EventArgs e)
         {
             cmb_khoa.SelectedIndex = 0;
+            cmb_LocKhoa.Items.Add("Tất cả");
+            cmb_LocKhoa.Items.Add("CNTT");
+            cmb_LocKhoa.Items.Add("QTKD");
+            cmb_LocKhoa.Items.Add("NNA"); // Ví dụ thêm Ngôn ngữ Anh...
+            cmb_LocKhoa.SelectedIndex = 0;
         }
 
         private int GetSelectedRow(string studentId)
@@ -142,19 +147,15 @@ namespace BT7
             foreach (DataGridViewRow row in dgv_students.Rows)
             {
                 // Kiểm tra dòng không rỗng và không phải là dòng mới chưa commit
-                if (row.Cells[0].Value != null)
+                // Thêm điều kiện: && row.Visible == true
+                if (row.Cells[0].Value != null && row.Visible == true)
                 {
-                    // Dựa vào code của bạn, Giới tính nằm ở Cell[2]
                     string gioiTinh = row.Cells[2].Value.ToString();
 
                     if (gioiTinh == "Nam")
-                    {
                         namCount++;
-                    }
                     else if (gioiTinh == "Nữ")
-                    {
                         nuCount++;
-                    }
                 }
             }
 
@@ -193,6 +194,45 @@ namespace BT7
                     txt_diem.Text = row.Cells[3].Value.ToString();
                     cmb_khoa.Text = row.Cells[4].Value.ToString();
                 }
+            }
+        }
+
+        private void cmb_LocKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy giá trị khoa đang được chọn để lọc
+                string selectedKhoa = cmb_LocKhoa.SelectedItem.ToString();
+
+                // Duyệt qua từng dòng trong DataGridView
+                foreach (DataGridViewRow row in dgv_students.Rows)
+                {
+                    // Bỏ qua dòng trống cuối cùng (dòng NewRow)
+                    if (row.IsNewRow) continue;
+
+                    // Lấy giá trị Khoa của dòng hiện tại (Cột index 4 như code cũ của bạn)
+                    // Lưu ý: Đảm bảo row.Cells[4] có dữ liệu để tránh lỗi Null
+                    string khoaCuaSinhVien = row.Cells[4].Value != null ? row.Cells[4].Value.ToString() : "";
+
+                    // LOGIC LỌC:
+                    // Nếu chọn "Tất cả" HOẶC Khoa của SV trùng với Khoa đang chọn -> Hiện
+                    if (selectedKhoa == "Tất cả" || khoaCuaSinhVien == selectedKhoa)
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        // Ngược lại -> Ẩn
+                        row.Visible = false;
+                    }
+                }
+
+                // Cập nhật lại số lượng sau khi lọc (chỉ đếm những dòng đang hiện)
+                UpdateStudentCounts();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message);
             }
         }
     }
